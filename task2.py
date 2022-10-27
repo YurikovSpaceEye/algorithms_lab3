@@ -78,12 +78,6 @@ def binary_search(arr, x):
     # Если тут, то элемент не находится в массиве.
     return -1, iterations
 
-def three_logn(arr1, x, y, z, const):
-    _, idx = binary_search(arr1, x)
-    arr1[idx] *= const
 
-    _, idx = binary_search(arr1, y)
-    arr1[idx] *= const
-
-    _, idx = binary_search(arr1, z)
-    arr1[idx] *= const
+def three_logn(arr1, x, y, z):
+    return binary_search(arr1, x)[0], binary_search(arr1, y)[0], binary_search(arr1, z)[0]

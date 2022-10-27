@@ -1,12 +1,12 @@
-def three_n(arr1, const):
+def three_n(arr1, a, b, c):
     for i in range(len(arr1)):
-        arr1[i] += const
+        arr1[i] += a
 
     for i in range(len(arr1)):
-        arr1[i] += const
+        arr1[i] += b
 
     for i in range(len(arr1)):
-        arr1[i] += const
+        arr1[i] += c
 
 
 # алгоритм quicksort

@@ -1,15 +1,15 @@
-def three_n(arr1, arr2, arr3, const):
+def three_n(arr1, const):
     for i in range(len(arr1)):
         arr1[i] += const
 
-    for i in range(len(arr2)):
-        arr2[i] += const
+    for i in range(len(arr1)):
+        arr1[i] += const
 
-    for i in range(len(arr3)):
-        arr3[i] += const
+    for i in range(len(arr1)):
+        arr1[i] += const
 
 
-# quicksort
+# алгоритм quicksort
 def nlogn(array):
 
     less = []
@@ -25,10 +25,8 @@ def nlogn(array):
                 equal.append(x)
             elif x > pivot:
                 greater.append(x)
-        # Don't forget to return something!
-        return nlogn(less)+equal+nlogn(greater)  # Just use the + operator to join lists
-    # Note that you want equal ^^^^^ not pivot
-    else:  # You need to handle the part at the end of the recursion - when you only have one element in your array, just return the array.
+        return nlogn(less)+equal+nlogn(greater)
+    else:
         return array
 
 
@@ -53,7 +51,7 @@ def factorial(lst):
             l.append([m] + p)
     return l
 
-def three_n(cube_array_3d, const):
+def n_to_the_power_of_3(cube_array_3d, const):
     for x in range(len(cube_array_3d)):
         for y in range(len(cube_array_3d)):
             for z in range(len(cube_array_3d)):
@@ -80,12 +78,12 @@ def binary_search(arr, x):
     # Если тут, то элемент не находится в массиве.
     return -1, iterations
 
-def three_logn(arr1, arr2, arr3, x, const):
+def three_logn(arr1, x, y, z, const):
     _, idx = binary_search(arr1, x)
     arr1[idx] *= const
 
-    _, idx = binary_search(arr2, x)
-    arr2[idx] *= const
+    _, idx = binary_search(arr1, y)
+    arr1[idx] *= const
 
-    _, idx = binary_search(arr3, x)
-    arr3[idx] *= const
+    _, idx = binary_search(arr1, z)
+    arr1[idx] *= const
